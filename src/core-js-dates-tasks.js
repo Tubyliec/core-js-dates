@@ -278,7 +278,7 @@ function getNextFridayThe13th(date) {
   const targetDate = new Date(date);
   targetDate.setDate(13);
   const currentMonth = targetDate.getMonth();
-  const months = 0;
+  const months = [];
   for (let i = currentMonth; i < 12; i += 1) {
     targetDate.setMonth(i);
     if (targetDate.getDay() === 5) {
@@ -300,8 +300,8 @@ function getNextFridayThe13th(date) {
  * Date(2024, 5, 1) => 2
  * Date(2024, 10, 10) => 4
  */
-function getQuarter(/* date */) {
-  throw new Error('Not implemented');
+function getQuarter(date) {
+  return Math.ceil((date.getMonth() + 1) / 3);
 }
 
 /**
